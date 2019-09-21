@@ -22,4 +22,4 @@ To tweak the behavior, open TestRaycast.cpp and scroll to the 'Configuration' se
 - Define TEST_SPLITTERS to test the various tree splitting algorithms
 - Define FLUSH_CACHE_AFTER_EVERY_RAY to flush the cache after every ray instead of after each test
 
-For more information see: [Rouwe-TriangleEncAndBVHsForRayCasts.docx](https://github.com/jrouwe/RayCastTest/blob/master/Rouwe-TriangleEncAndBVHsForRayCasts.docx?raw=true)
+For more information see: [Rouwe-TriangleEncAndBVHsForRayCasts.pdf](http://jrouwe.nl/raycasttest/Rouwe-TriangleEncAndBVHsForRayCasts.pdf)
