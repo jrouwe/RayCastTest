@@ -1,6 +1,6 @@
 # RayCastTest
 
-A frame work for testing ray casts against triangles using various tree types and triangle encodings.
+A framework for testing ray casts against triangles using various tree types and triangle encodings.
 
 To run:
 
