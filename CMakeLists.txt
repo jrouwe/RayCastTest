@@ -264,3 +264,22 @@ add_executable(TestRayCast  ${TEST_RAY_CAST_SRC_FILES} ${TEST_RAY_CAST_COMPILED_
 target_include_directories(TestRayCast PUBLIC TestRayCast)
 target_link_libraries (TestRayCast LINK_PUBLIC d3d11.lib shcore.lib)
 set_property(TARGET TestRayCast PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+
+# Source files for PlyConverter
+set(PLY_CONVERTER_SRC_FILES
+	${CMAKE_CURRENT_SOURCE_DIR}/PlyConverter/PlyConverter.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Core/Utils.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Utils/Model.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Geometry/Indexify.cpp
+)
+
+# Enable Precompiled Headers for PlyConverter
+set_source_files_properties(${PLY_CONVERTER_SRC_FILES} PROPERTIES COMPILE_FLAGS "/Yupch.h")
+set(PLY_CONVERTER_SRC_FILES ${PLY_CONVERTER_SRC_FILES} ${CMAKE_CURRENT_SOURCE_DIR}/pch.cpp)
+set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/pch.cpp PROPERTIES COMPILE_FLAGS "/Ycpch.h")
+
+# Create PlyConverter executable
+add_executable(PlyConverter  ${PLY_CONVERTER_SRC_FILES})
+target_link_options(PlyConverter PUBLIC "/SUBSYSTEM:CONSOLE")
+set_property(TARGET PlyConverter PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+
